@@ -14,7 +14,9 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,6 +36,31 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script>
+    function addChips(e) {
+      let val = e.value;
+      if (val.slice(-1) === " " && val.trim().length > 0) {
+        // console.log(val);
+        let ele = document.querySelector('label.chips');
+        let tb = ele.querySelector('input');
+        let chip = document.createElement('span');
+        let cross = document.createElement('a');
+        cross.onclick = (e) => {
+          e.target.parentElement.remove();
+        };
+
+        chip.innerHTML = val.trim();
+        cross.innerHTML = 'x';
+        chip.appendChild(cross);
+
+        ele.insertBefore(chip, tb);
+
+        e.value = '';
+      }
+    }
+  </script>
+
 </head>
 
 <body>
@@ -42,7 +69,9 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Gp<span>.</span></a></h1>
+      <h1 class="logo"><a href="index.html">
+          <img src="./assets/img/1_logo.png" style="height: --webkit-fill-available; height: max-content;" />
+      </h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -50,10 +79,10 @@
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#services">Algorithm</a></li>
+          <li><a href="#portfolio">Data</a></li>
           <li><a href="#team">Team</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
+          <!-- <li class="drop-down"><a href="">Drop Down</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="drop-down"><a href="#">Deep Drop Down</a>
@@ -69,13 +98,13 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a href="#contact">Contact</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="#about" class="get-started-btn scrollto">Get Started</a>
+      <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
 
     </div>
   </header><!-- End Header -->
@@ -84,14 +113,18 @@
   <section id="hero" class="d-flex align-items-center justify-content-center">
     <div class="container" data-aos="fade-up">
 
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-        <div class="col-xl-6 col-lg-8">
-          <h1>Powerful Startup Incubator <span>Recommender System</span></h1>
+      <div class="row justify-content-center jumbo-heading" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-lg-8">
+          <h1>
+            <span>80% startups choose the wrong incubator</span>
+            <br />
+            Don't be one of them
+          </h1>
           <!--<h2>We are team of talanted digital marketers</h2>-->
         </div>
       </div>
 
-      <div class="row mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+      <!-- <div class="row mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
         <div class="col-xl-2 col-md-4 col-6">
           <div class="icon-box">
             <i class="ri-store-line"></i>
@@ -122,9 +155,54 @@
             <h3><a href="">Nemos Enimade</a></h3>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
+    <span class="main-page-button">
+      <a href="#" class="get-started-btn scrollto" data-toggle="modal" data-target="#exampleModal">
+        <strong>FIND YOUR PERFECT INCUBATOR</strong>
+      </a>
+    </span>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="basic-url">Company AngelList Profile:</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">https://angel.co/company/</span>
+                  </div>
+                  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Categories/Industries:</label>
+                <!-- <textarea class="form-control" id="message-text"></textarea> -->
+                <label for="chips-input" class="chips form-control">
+                  <input type="text" id="chips-input" oninput="addChips(this)" />
+                </label>
+              </div>
+            </form>
+            <button type="button" class="btn btn-primary text-center"
+              style="position: relative; left: 50%; transform: translateX(-50%);">
+              Generate Recommendations
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section><!-- End Hero -->
 
   <main id="main">
@@ -140,16 +218,20 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
             <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
             <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
               magna aliqua.
             </p>
             <ul>
               <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
               <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla
+                pariatur.</li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+              voluptate
               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
             </p>
           </div>
@@ -181,7 +263,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row">
-          <div class="image col-lg-6" style='background-image: url("assets/img/features.jpg");' data-aos="fade-right"></div>
+          <div class="image col-lg-6" style='background-image: url("assets/img/features.jpg");' data-aos="fade-right">
+          </div>
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
             <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-receipt"></i>
@@ -227,7 +310,8 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+            data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4><a href="">Sed ut perspiciatis</a></h4>
@@ -235,7 +319,8 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
+            data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4><a href="">Magni Dolores</a></h4>
@@ -278,7 +363,9 @@
 
         <div class="text-center">
           <h3>Call To Action</h3>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.</p>
           <a class="cta-btn" href="#">Call To Action</a>
         </div>
 
@@ -314,7 +401,8 @@
                 <h4>App 1</h4>
                 <p>App</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox"
+                    title="App 1"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -328,7 +416,8 @@
                 <h4>Web 3</h4>
                 <p>Web</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox"
+                    title="Web 3"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -342,7 +431,8 @@
                 <h4>App 2</h4>
                 <p>App</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox"
+                    title="App 2"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -356,7 +446,8 @@
                 <h4>Card 2</h4>
                 <p>Card</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox"
+                    title="Card 2"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -370,7 +461,8 @@
                 <h4>Web 2</h4>
                 <p>Web</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox"
+                    title="Web 2"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -384,7 +476,8 @@
                 <h4>App 3</h4>
                 <p>App</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox"
+                    title="App 3"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -398,7 +491,8 @@
                 <h4>Card 1</h4>
                 <p>Card</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox"
+                    title="Card 1"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -412,7 +506,8 @@
                 <h4>Card 3</h4>
                 <p>Card</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox"
+                    title="Card 3"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -426,7 +521,8 @@
                 <h4>Web 3</h4>
                 <p>Web</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox"
+                    title="Web 3"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -443,12 +539,15 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row no-gutters">
-          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
-          <div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"
+            data-aos="fade-right" data-aos-delay="100"></div>
+          <div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch" data-aos="fade-left"
+            data-aos-delay="100">
             <div class="content d-flex flex-column justify-content-center">
               <h3>Voluptatem dignissimos provident quasi</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Duis aute irure dolor in reprehenderit
               </p>
               <div class="row">
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
@@ -463,7 +562,8 @@
                   <div class="count-box">
                     <i class="icofont-document-folder"></i>
                     <span data-toggle="counter-up">85</span>
-                    <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
+                    <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan
+                    </p>
                   </div>
                 </div>
 
@@ -471,7 +571,8 @@
                   <div class="count-box">
                     <i class="icofont-clock-time"></i>
                     <span data-toggle="counter-up">12</span>
-                    <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
+                    <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate
+                      non vel</p>
                   </div>
                 </div>
 
@@ -502,7 +603,8 @@
             <h4>Ceo &amp; Founder</h4>
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+              quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
           </div>
@@ -513,7 +615,8 @@
             <h4>Designer</h4>
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
+              quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
           </div>
@@ -524,7 +627,8 @@
             <h4>Store Owner</h4>
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor
+              labore quem eram duis noster aute amet eram fore quis sint minim.
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
           </div>
@@ -535,7 +639,8 @@
             <h4>Freelancer</h4>
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim
+              dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
           </div>
@@ -546,7 +651,8 @@
             <h4>Entrepreneur</h4>
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
+              labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
           </div>
@@ -654,7 +760,9 @@
         </div>
 
         <div>
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+          <iframe style="border:0; width: 100%; height: 270px;"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+            frameborder="0" allowfullscreen></iframe>
         </div>
 
         <div class="row mt-5">
@@ -688,20 +796,24 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                    data-rule="email" data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                  data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" rows="5" data-rule="required"
+                  data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
@@ -723,13 +835,15 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
+    <!-- <div class="footer-top">
       <div class="container">
         <div class="row">
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>Gp<span>.</span></h3>
+              <h3>
+                <img src="/assets/img/1_logo.png" />
+              </h3>
               <p>
                 A108 Adam Street <br>
                 NY 535022, USA<br><br>
@@ -779,19 +893,19 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Artificial Incoherence</span></strong>. All Rights Reserved
       </div>
-      <div class="credits">
+      <!-- <div class="credits"> -->
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div> -->
     </div>
   </footer><!-- End Footer -->
 
