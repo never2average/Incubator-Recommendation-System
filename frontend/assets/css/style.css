@@ -1620,10 +1620,20 @@ div.jumbo-heading {
   border-bottom: 0;
 }
 
+div.custom-card-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 15rem;
+}
+div.custom-card-wrapper > div + div {
+  margin-top: 1rem;
+}
 div.custom-card {
   border: 1px solid white; 
   border-radius: 1rem;
   display: flex;
+
+  margin-right: 10px;
 }
 div.custom-card > div {
   display: inline-block;
@@ -1633,10 +1643,20 @@ div.custom-card > div {
 div.custom-card > div:nth-child(2) {    /* for the arrow button div */
   flex: 0;
   border-left: 1px solid white;
-}
-div.custom-card > div > span {          /* for the arrow button span */
+
   font-size: 10vh;
   color: yellow;
+
+  cursor: pointer;
+}
+/* div.custom-card > div:nth-child(2) > span {          /* for the arrow button span 
+  font-size: 10vh;
+  color: yellow;
+} */
+div.custom-card > div:nth-child(2) img {          /* for the arrow button img */
+  height: -webkit-fill-available;
+  height: -moz-available;
+  margin: 0 -3rem 0 -3rem;
 }
 div.custom-card div.custom-card-header {
   font-size: xx-large;
