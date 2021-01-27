@@ -1616,3 +1616,61 @@ div.jumbo-heading {
   cursor: pointer;
   margin-left: 0.5rem;
 }
+.modal-header {
+  border-bottom: 0;
+}
+
+div.custom-card {
+  border: 1px solid white; 
+  border-radius: 1rem;
+  display: flex;
+}
+div.custom-card > div {
+  display: inline-block;
+  flex: 1;
+  padding: 1rem;
+}
+div.custom-card > div:nth-child(2) {    /* for the arrow button div */
+  flex: 0;
+  border-left: 1px solid white;
+}
+div.custom-card > div > span {          /* for the arrow button span */
+  font-size: 10vh;
+  color: yellow;
+}
+div.custom-card div.custom-card-header {
+  font-size: xx-large;
+  font-weight: bold;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+div.custom-card div.custom-card-body {
+  padding: 0 1rem;
+  display: flex;
+}
+div.custom-card div.custom-card-body div.custom-card-metrics {
+  display: inline-block;
+  padding: 0;
+  padding: 0 1rem;
+  flex-grow: 1;
+}
+div.custom-card  div.custom-card-body  div.custom-card-metrics  div.custom-card-data {
+  text-align: center;
+  padding: 0.5rem;
+}
+div.custom-card  div.custom-card-body  div.custom-card-metrics  div.custom-card-data:first-child {
+  color: yellow;
+  font-size: xx-large;
+}
+
+@media (max-width: 768px) {
+  div.custom-card > div:nth-child(2) {    /* for the arrow button div */
+    display: none;
+  }
+  div.custom-card div.custom-card-body div.custom-card-metrics {
+    width: 100%;
+  }
+  div.custom-card div.custom-card-body {
+    display: block;
+  }
+}
