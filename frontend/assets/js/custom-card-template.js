@@ -18,8 +18,20 @@ const generateCustomCards = (params) => {
         dataFields[0].innerHTML = param[1];
         dataFields[2].innerHTML = param[2];
         dataFields[4].innerHTML = param[3];
-        arrow.addEventListener('click', () => {location.href = param[5]});
+        arrow.addEventListener('click', () => { location.href = param[5] });
 
         modalBody.appendChild(clone);
     }
-}
+
+    handleModalClose();
+};
+
+const handleModalClose = () => {
+    let modal = document.querySelector("div.modal-dialog[role=document]");
+    let cards = modal.querySelectorAll("div.custom-card-wrapper div.custom-card");
+    let closeButton = modal.querySelector("button[data-dismiss=modal");
+
+    closeButton.addEventListener("click", () => {
+        cards.forEach(ele => ele.remove());
+    });
+};
