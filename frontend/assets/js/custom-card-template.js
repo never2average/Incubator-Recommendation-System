@@ -22,16 +22,12 @@ const generateCustomCards = (params) => {
 
         modalBody.appendChild(clone);
     }
-
-    handleModalClose();
 };
 
 const handleModalClose = () => {
-    let modal = document.querySelector("div.modal-dialog[role=document]");
-    let cards = modal.querySelectorAll("div.custom-card-wrapper div.custom-card");
-    let closeButton = modal.querySelector("button[data-dismiss=modal");
-
-    closeButton.addEventListener("click", () => {
-        cards.forEach(ele => ele.remove());
-    });
+    $('#perfectIncubatorModal').on('hidden.bs.modal', (e) =>
+        $("#perfectIncubatorModal div.custom-card").each((index, element) => element.remove())
+    );
 };
+
+handleModalClose();
