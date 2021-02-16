@@ -11,10 +11,15 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+
+  --accent-color: #ffc451;
+
+  --accent-color: #c5e1a5;
+  --accent-dark-color: #94af76;
 }
 
 a {
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 a:hover {
@@ -45,14 +50,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: 4px;
-  background: #ffc451;
+  background: var(--accent-color);
   color: #151515;
   transition: all 0.4s;
 }
 
 .back-to-top i:hover {
   background: #151515;
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 /*--------------------------------------------------------------
@@ -74,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: calc(50% - 0px);
   left: calc(50% - 30px);
-  border: 6px solid #ffc451;
+  border: 6px solid var(--accent-color);
   border-top-color: #151515;
   border-bottom-color: #151515;
   border-radius: 50%;
@@ -139,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo a span {
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 #header .logo img {
@@ -177,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 .nav-menu .drop-down ul {
@@ -215,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
   color: #151515;
-  background: #ffc451;
+  background: var(--accent-color);
 }
 
 .nav-menu .drop-down > a:after {
@@ -267,11 +272,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
   font-size: 14px;
   display: inline-block;
-  border: 2px solid #ffc451;
+  border: 2px solid var(--accent-color);
 }
 
 .get-started-btn:hover {
-  background: #ffbb38;
+  /* background: #ffbb38; */
+  background: var(--accent-dark-color);
   color: #343a40;
 }
 
@@ -336,7 +342,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
   color: #151515;
   text-decoration: none;
-  background: #ffc451;
+  background: var(--accent-color);
 }
 
 .mobile-nav .drop-down > a:after {
@@ -396,7 +402,8 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  /* background: url("../img/hero-bg.jpg") top center; */
+  background: url("../img/danielle-macinnes-IuLgi9PWETU-unsplash.jpg") top center;
   background-size: cover;
   position: relative;
 }
@@ -427,7 +434,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h1 span {
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 #hero h2 {
@@ -447,7 +454,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero .icon-box i {
   font-size: 32px;
   line-height: 1;
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 #hero .icon-box h3 {
@@ -465,11 +472,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .icon-box h3 a:hover {
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 #hero .icon-box:hover {
-  border-color: #ffc451;
+  border-color: var(--accent-color);
 }
 
 @media (min-width: 1024px) {
@@ -559,7 +566,7 @@ section {
   font-size: 20px;
   left: 0;
   top: -3px;
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 .about .content p:last-child {
@@ -609,7 +616,7 @@ section {
 }
 
 .clients .owl-dot.active {
-  background-color: #ffc451 !important;
+  background-color: var(--accent-color) !important;
 }
 
 /*--------------------------------------------------------------
@@ -632,7 +639,7 @@ section {
 .features .icon-box i {
   font-size: 48px;
   float: left;
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 .features .icon-box p {
@@ -663,7 +670,7 @@ section {
   margin: 0 auto;
   width: 64px;
   height: 64px;
-  background: #ffc451;
+  background: var(--accent-color);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -690,7 +697,7 @@ section {
 }
 
 .services .icon-box h4 a:hover {
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 .services .icon-box p {
@@ -739,8 +746,8 @@ section {
 }
 
 .cta .cta-btn:hover {
-  background: #ffc451;
-  border-color: #ffc451;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
   color: #151515;
 }
 
@@ -774,7 +781,7 @@ section {
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   color: #151515;
-  background: #ffc451;
+  background: var(--accent-color);
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -851,7 +858,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -891,7 +898,7 @@ section {
 .counts .content .count-box i {
   display: block;
   font-size: 36px;
-  color: #ffc451;
+  color: var(--accent-color);
   float: left;
 }
 
@@ -1036,7 +1043,7 @@ section {
 }
 
 .testimonials .owl-dot.active {
-  background-color: #ffc451 !important;
+  background-color: var(--accent-color) !important;
 }
 
 @media (min-width: 1024px) {
@@ -1093,12 +1100,12 @@ section {
   background: rgba(255, 255, 255, 0.8);
   display: inline-block;
   transition: ease-in-out 0.3s;
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 .team .member .social a:hover {
   color: #fff;
-  background: #ffc451;
+  background: var(--accent-color);
 }
 
 .team .member .social i {
@@ -1145,7 +1152,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  background: #ffc451;
+  background: var(--accent-color);
   color: #151515;
   float: left;
   width: 44px;
@@ -1243,7 +1250,7 @@ section {
 }
 
 .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
-  border-color: #ffc451;
+  border-color: var(--accent-color);
 }
 
 .contact .php-email-form input {
@@ -1255,7 +1262,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #ffc451;
+  background: var(--accent-color);
   border: 0;
   padding: 10px 24px;
   color: #151515;
@@ -1365,7 +1372,7 @@ section {
 }
 
 .portfolio-details .portfolio-details-carousel .owl-dot.active {
-  background-color: #ffc451 !important;
+  background-color: var(--accent-color) !important;
 }
 
 .portfolio-details .portfolio-info {
@@ -1451,7 +1458,7 @@ section {
 }
 
 #footer .footer-top .footer-info h3 span {
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 #footer .footer-top .footer-info p {
@@ -1478,7 +1485,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #ffc451;
+  background: var(--accent-color);
   color: #151515;
   text-decoration: none;
 }
@@ -1503,7 +1510,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #ffc451;
+  color: var(--accent-color);
   font-size: 18px;
   line-height: 1;
 }
@@ -1526,7 +1533,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #ffc451;
+  color: var(--accent-color);
 }
 
 #footer .footer-top .footer-newsletter form {
@@ -1552,14 +1559,15 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #ffc451;
+  background: var(--accent-color);
   color: #151515;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
 }
 
 #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
-  background: #ffcd6b;
+  /* background: #ffcd6b; */
+  background: var(--accent-dark-color);
 }
 
 #footer .copyright {
@@ -1645,7 +1653,7 @@ div.custom-card > div:nth-child(2) {    /* for the arrow button div */
   padding: 0;
 
   font-size: 10vh;
-  color: yellow;
+  color: var(--accent-color);
 
   cursor: pointer;
 }
@@ -1682,7 +1690,7 @@ div.custom-card  div.custom-card-body  div.custom-card-metrics  div.custom-card-
   padding: 0.5rem;
 }
 div.custom-card  div.custom-card-body  div.custom-card-metrics  div.custom-card-data:first-child {
-  color: yellow;
+  color: var(--accent-color);
   font-size: xx-large;
 }
 
