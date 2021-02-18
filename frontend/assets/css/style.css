@@ -1708,9 +1708,5 @@ div.custom-card  div.custom-card-body  div.custom-card-metrics  div.custom-card-
 
 .algo-vid {
   width: 100%;
-  border: 3px solid var(--accent-color);
-  transition: border 0.3s ease;
-}
-.algo-vid:hover {
-  border: 5px solid var(--accent-dark-color);
+  border: none;
 }
