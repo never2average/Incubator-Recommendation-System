@@ -109,12 +109,27 @@ jQuery(document).ready(function($) {
       type: "POST",
       url: action,
       data: str,
-      success: function(msg) {
-        if (msg == 'OK') {
+      // success: function(msg) {
+      //   if (msg == 'OK') {
+      //     this_form.find('.loading').slideUp();
+      //     this_form.find('.sent-message').slideDown();
+      //     this_form.find("input:not(input[type=submit]), textarea").val('');
+      //   } else {
+      //     this_form.find('.loading').slideUp();
+      //     this_form.find('.error-message').slideDown().html(msg);
+      //   }
+      // },
+      statusCode: {
+        404: () => {
+          this_form.find('.loading').slideUp();
+          this_form.find('.error-message').slideDown().html(msg);
+        },
+        200: () => {
           this_form.find('.loading').slideUp();
           this_form.find('.sent-message').slideDown();
           this_form.find("input:not(input[type=submit]), textarea").val('');
-        } else {
+        },
+        500: () => {  
           this_form.find('.loading').slideUp();
           this_form.find('.error-message').slideDown().html(msg);
         }

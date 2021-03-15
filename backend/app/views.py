@@ -36,10 +36,10 @@ class ContactUs():
 @api_view(['POST'])
 def contactUs_view(request):
     print(request.data)
-    email = request.data['email']
-    name = request.data['name']
-    message = request.data['message']
-    subject = request.data['subject']
+    email = request.data['email'][0]
+    name = request.data['name'][0]
+    message = request.data['message'][0]
+    subject = request.data['subject'][0]
     comment = ContactUs(email=email, name=name,
                         message=message, subject=subject)
     serializer = ContactUsSerializer(comment)
@@ -52,7 +52,7 @@ class GenerateResults():
         self.profile = profile
 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def generateResults_view(request):
     print(request.data)
     profile = request.data['profile']
@@ -61,9 +61,9 @@ def generateResults_view(request):
     generatedResults = GenerateResults(
         [
             {
-                "company1": [10, 20, 30],
-                "company2": [40, 50, 60],
-                "company3": [70, 80, 90],
+                "company1": [10, 20, 30, 'l1', 'l2'],
+                "company2": [40, 50, 60, 'l1', 'l2'],
+                "company3": [70, 80, 90, 'l1', 'l2'],
             }
         ],
         profile
