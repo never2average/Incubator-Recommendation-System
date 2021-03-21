@@ -4,6 +4,50 @@
 //     [Name, AI Score, Chances of Selection, Funding, Link1, Link2],
 //     [Name, AI Score, Chances of Selection, Funding, Link1, Link2]
 // ]
+
+const getRecommendations = () => {
+    let _cats = document.querySelectorAll('label[for="chips-input"] > span');
+    let cats = Array.prototype.slice.call(_cats).map(ele => {
+        return ele.innerText;
+    });
+    let profile = 'https://angel.co/company/' + document.getElementById('basic-url').textContent;
+
+    $.ajax({
+        url: 'http://localhost:8000/getResult/',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            profile: profile,
+            categories: cats,
+        }),
+        dataType: 'json',
+
+        statusCode: {
+            404: () => {
+                alert('error');
+            },
+            200: (res) => {
+                //generateCustomCards([['Name1', '55', '25', '35', 'L1.1', 'L1.2'],['Name2', '4', '5', '6', 'L2.1', 'L2.2'],['Name3', '7', '8', '9', 'L3.1', 'L3.2']]);
+                const companies = res.companies[0];
+                let companyList = [];
+                for(const company in companies) {
+                    let thisCompany = [];
+                    thisCompany.push(company);
+                    for (const data of companies[company]) {
+                        thisCompany.push(data);
+                    }
+                    companyList.push(thisCompany);
+                }
+
+                generateCustomCards(companyList);
+            },
+            500: () => {
+                alert('error');
+            }
+        }
+    });
+
+};
 const generateCustomCards = (params) => {
     for (const param of params) {
         let modalBody = document.querySelector("div.modal-dialog[role=document] div.modal-body div.custom-card-wrapper");
