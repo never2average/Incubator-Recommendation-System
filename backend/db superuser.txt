@@ -1,3 +1,0 @@
-email: mayank.mathur.mayank@gmail.com
-username: mayank
-password: passwordispublic
