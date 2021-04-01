@@ -13,7 +13,7 @@ const getRecommendations = () => {
     let profile = 'https://angel.co/company/' + document.getElementById('basic-url').textContent;
 
     $.ajax({
-        url: 'http://localhost:8000/getResult/',
+        url: 'http://65.1.135.248:80/getResult/',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
