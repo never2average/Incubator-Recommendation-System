@@ -85,7 +85,7 @@
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Algorithm</a></li>
-          <li><a href="#counts">Data</a></li>
+          <!-- <li><a href="#counts">Data</a></li> -->
           <li><a href="#team">Team</a></li>
           <!-- <li class="drop-down"><a href="">Drop Down</a>
             <ul>
@@ -195,29 +195,24 @@
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Categories/Industries:</label>
-                <!-- <textarea class="form-control" id="message-text"></textarea> -->
                 <label for="chips-input" class="chips form-control">
                   <input type="text" id="chips-input" oninput="addChips(this)" />
                 </label>
-
-                <!-- <div class="">
-
-                </div> -->
               </div>
             </form>
-            <!-- <button type="button" class="btn btn-primary text-center"
-              style="position: relative; left: 50%; transform: translateX(-50%);">
-              Generate Recommendations
-            </button> -->
-            <!-- <a href="#" class="get-started-btn scrollto mods-reverse-colors" data-toggle="modal"
-              data-target="#perfectIncubatorModal" style="position: relative; left: 50%; transform: translateX(-50%);">
-              <strong>Generate Recommendations</strong>
-            </a> -->
-            <a href="#" class="get-started-btn scrollto mods-reverse-colors" data-target="#perfectIncubatorModal"
-              style="position: relative; left: 50%; transform: translateX(-50%);"
-              onclick="getRecommendations()">
-              <strong>Generate Recommendations</strong>
-            </a>
+            <div style="display: flex; justify-content: space-between;">
+              <a href="#" class="get-started-btn scrollto mods-reverse-colors" data-target="#perfectIncubatorModal"
+                onclick="getRecommendations()">
+                <strong>Generate Recommendations</strong>
+              </a>
+              <select class="form-select form-select-lg" aria-label=".form-select-lg example"
+                onchange="cityFilterChange(this)">
+                <option selected>Location Filter</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+              </select>
+            </div>
 
             <hr style="size: 1rem;" />
 
@@ -258,7 +253,6 @@
                   </div>
                 </div>
                 <div>
-                  <!--style="background-image: url('assets/img/chevron-right.svg'); background-repeat: no-repeat; background-size: cover;">-->
                   <!--
                     This is the arrow button section
                   -->
@@ -270,6 +264,9 @@
             </template>
 
             <div class="custom-card-wrapper"></div>
+
+            
+            <div style="text-align: center; font-size: 1.5rem;">We will be releasing the actual version soon. Stay Tuned.</div>
           </div>
         </div>
       </div>
@@ -376,10 +373,11 @@
 
           <p>
             <b>Algorithm Objectives:</b>
-            <ul>
-              <li>Incubator Recommendation based on need analysis of various services offered by incubators.</li>
-              <li>Chance of Selection estimation using nearest neighbour algorithm on founder-market fit of your startup vs selected startups for a particular incubator.</li>
-            </ul>
+          <ul>
+            <li>Incubator Recommendation based on need analysis of various services offered by incubators.</li>
+            <li>Chance of Selection estimation using nearest neighbour algorithm on founder-market fit of your startup
+              vs selected startups for a particular incubator.</li>
+          </ul>
           </p>
 
 
@@ -630,7 +628,7 @@
     <!-- End Portfolio Section -->
 
     <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
+    <!-- <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -689,7 +687,8 @@
         </div>
 
       </div>
-    </section><!-- End Counts Section -->
+    </section> -->
+    <!-- End Counts Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
@@ -707,7 +706,7 @@
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
                 <img
-                  src="https://media-exp1.licdn.com/dms/image/C4D03AQHuhg8RqCfS6A/profile-displayphoto-shrink_400_400/0/1525546928357?e=1617235200&v=beta&t=tX4ET1HOQ3kGqwm00y8Z0u0xwyX5W-bcG76IFKhI2F0"
+                  src="./assets/img/profilepics/psrivastava.jpeg"
                   class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://github.com/never2average"><i class="icofont-github"></i></a>
@@ -726,7 +725,7 @@
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
                 <img
-                  src="https://media-exp1.licdn.com/dms/image/C5103AQE69vAVPLXhlQ/profile-displayphoto-shrink_400_400/0/1586295977229?e=1617235200&v=beta&t=msT1XwnIIrn9oTrM7HizxQz_ohNUg9dLxSy0LBTZcOg"
+                  src="./assets/img/profilepics/mmathur.jpeg"
                   class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://github.com/mynk-9"><i class="icofont-github"></i></a>
@@ -740,29 +739,12 @@
             </div>
           </div>
 
-          <!-- Mridula Mam Team Info -->
-          <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <div class="member-img">
-                <img
-                  src="https://media-exp1.licdn.com/dms/image/C4D03AQHOiM0uIICSiQ/profile-displayphoto-shrink_400_400/0/1516430820556?e=1617235200&v=beta&t=zEgD15xOwDQt5JoF8bxVIjVdHc6krp40v7jXwE9QJ_Y"
-                  class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://www.linkedin.com/in/mridula-goel-15276012/"><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Mridula Goel</h4>
-              </div>
-            </div>
-          </div>
-
           <!-- Anshuman Team Info -->
           <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="300">
               <div class="member-img">
                 <img
-                  src="https://media-exp1.licdn.com/dms/image/C4D03AQHjXjPwnWzq7w/profile-displayphoto-shrink_400_400/0/1606191884249?e=1617235200&v=beta&t=82J0ojJdPTtnIoK0XFx2XD9cKHJ0Cyh-r7JsN7AhBQ4"
+                  src="./assets/img/profilepics/asingh.jpeg"
                   class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://github.com/MysteriousAcadia"><i class="icofont-github"></i></a>
@@ -781,7 +763,7 @@
             <div class="member" data-aos="fade-up" data-aos-delay="400">
               <div class="member-img">
                 <img
-                  src="https://media-exp1.licdn.com/dms/image/C4D03AQGQcrhZkDCreg/profile-displayphoto-shrink_400_400/0/1592293899997?e=1617235200&v=beta&t=7RzAz0OgQZJvCgND5C_sc_pyS_tRAIzyDreqK1ikhHY"
+                  src="./assets/img/profilepics/krathi.jpeg"
                   class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://instagram.com/rathi_kushal752/"><i class="icofont-instagram"></i></a>
@@ -798,6 +780,39 @@
 
       </div>
     </section><!-- End Team Section -->
+
+    <!-- ======= Mentor Section ======= -->
+    <section id="mentor" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Our</h2>
+          <p>Mentor</p>
+        </div>
+
+        <div class="row">
+
+          <!-- Mridula Mam Team Info -->
+          <div class="col-lg-2 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img
+                  src="./assets/img/profilepics/mgoel.jpeg"
+                  class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/mridula-goel-15276012/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Mridula Goel</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Mentor Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
