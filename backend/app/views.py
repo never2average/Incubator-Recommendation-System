@@ -51,6 +51,10 @@ class GenerateResults():
         self.companies = companies
         self.profile = profile
 
+# temp func
+# def companyGen(c):
+    
+
 
 @api_view(['POST'])
 def generateResults_view(request):
@@ -63,7 +67,15 @@ def generateResults_view(request):
             {
                 "company1": [10, 20, 30, 'l1', 'l2'],
                 "company2": [40, 50, 60, 'l1', 'l2'],
-                "company3": [70, 80, 90, 'l1', 'l2'],
+                "company3": [70, 80, 90, 'l1', 'l2']
+                # "company1": {
+                #     "ai": 10,
+                #     "cos": 20,
+                #     "funding": 30,
+                #     "link1": "l1",
+                #     "link2": "l2",
+                #     "city": 
+                # }
             }
         ],
         profile
