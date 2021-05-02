@@ -18,7 +18,7 @@ class StartupNeeds(models.Model):
         GD = "good"
         EX = "excellent"
 
-    startup_id = models.ForeignKey(Incubators, on_delete=models.CASCADE)
+    startup_id = models.AutoField(primary_key=True)
     company_linkedIn = models.CharField(max_length=255)
     angellist_url = models.CharField(max_length=255)
     phy_amenities = models.CharField(
