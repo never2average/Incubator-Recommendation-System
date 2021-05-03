@@ -25,7 +25,7 @@ SECRET_KEY = '20=7dirfol&8o26tf^^df^7uofs04(l0bgnd#xs7p5auhqb)43'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["inqb8r.tech", "app.inqb8r.tech"]
 
 
 # Application definition
