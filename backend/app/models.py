@@ -11,55 +11,55 @@ class Incubators(models.Model):
     post_money_valuation = models.BigIntegerField()
 
 class StartupNeeds(models.Model):
-    class StarSystem(models.TextChoices):
-        BD = "bad"
-        VB = "very_bad"
-        ST = "satisfactory"
-        GD = "good"
-        EX = "excellent"
+    class RequirementUrgency(models.TextChoices):
+        NR = "not_required"
+        SR = "somewhat_required"
+        NC = "necessary"
+        EN = "extremely_necessary"
+        DB = "dealbreaker"
 
     startup_id = models.AutoField(primary_key=True)
     company_linkedIn = models.CharField(max_length=255)
     angellist_url = models.CharField(max_length=255)
     phy_amenities = models.CharField(
         max_length=2,
-        choices=StarSystem.choices
+        choices=RequirementUrgency.choices
     )
     seed_funding = models.CharField(
         max_length=2,
-        choices=StarSystem.choices
+        choices=RequirementUrgency.choices
     )
     research_labs = models.CharField(
         max_length=2,
-        choices=StarSystem.choices
+        choices=RequirementUrgency.choices
     )
     market_access = models.CharField(
         max_length=2,
-        choices=StarSystem.choices
+        choices=RequirementUrgency.choices
     )
     talent_access = models.CharField(
         max_length=2,
-        choices=StarSystem.choices
+        choices=RequirementUrgency.choices
     )
     further_funding = models.CharField(
         max_length=2,
-        choices=StarSystem.choices
+        choices=RequirementUrgency.choices
     )
     networking = models.CharField(
         max_length=2,
-        choices=StarSystem.choices
+        choices=RequirementUrgency.choices
     )
     technical_mentorship = models.CharField(
         max_length=2,
-        choices=StarSystem.choices
+        choices=RequirementUrgency.choices
     )
     logistics = models.CharField(
         max_length=2,
-        choices=StarSystem.choices
+        choices=RequirementUrgency.choices
     )
     business_mentorship = models.CharField(
         max_length=2,
-        choices=StarSystem.choices
+        choices=RequirementUrgency.choices
     )
 
 class Industry(models.Model):
@@ -82,18 +82,18 @@ class PreviousRecommendations(models.Model):
     selection_chance = models.IntegerField()
 
 class PreviousRequests(models.Model):
-    class RequirementUrgency(models.TextChoices):
-        NR = "not_required"
-        SR = "somewhat_required"
-        NC = "necessary"
-        EN = "extremely_necessary"
-        DB = "dealbreaker"
+    class StarSystem(models.TextChoices):
+        BD = "bad"
+        VB = "very_bad"
+        ST = "satisfactory"
+        GD = "good"
+        EX = "excellent"
 
     request_id = models.ForeignKey(PreviousRecommendations, to_field="recommendation")
     request_angellist = models.IntegerField()
     reviews = models.CharField(
         max_length=2,
-        choices=RequirementUrgency.choices
+        choices=StarSystem.choices
     )
 class KeyStartups(models.Model):
     startup_id = models.IntegerField(primary_key=True)
