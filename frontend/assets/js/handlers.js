@@ -118,7 +118,7 @@ const cityFilterChange = (selectElement) => {
     }
 };
 
-function addChips(e) {
+function addChips(e, validate = false) {
     let val = e.value;
     if (val.slice(-1) === " " && val.trim().length > 0) {
         // console.log(val);
@@ -133,6 +133,8 @@ function addChips(e) {
         chip.innerHTML = val.trim();
         cross.innerHTML = 'x';
         chip.appendChild(cross);
+        if (validate)
+            chip.style.backgroundColor = getValidatedColor(val.trim());
 
         ele.insertBefore(chip, tb);
 
