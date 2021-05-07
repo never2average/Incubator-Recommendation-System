@@ -84,7 +84,11 @@ def generateResults_view(request):
     # )
     # serializer = GenerateResultsSerializer(generatedResults)
 
-    dummyData = json.load('./21.json')
-    
-    
-    return Response(str(dummyData))
+    # return Response(serializer.data)
+
+    f = open("./21.json", mode='r')
+    dummyData = json.load(f)
+    dummyDataSerialized = {
+        'incubators': dummyData
+    }
+    return Response(dummyDataSerialized)
