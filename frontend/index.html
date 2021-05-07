@@ -37,32 +37,6 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <script>
-    function addChips(e) {
-      let val = e.value;
-      if (val.slice(-1) === " " && val.trim().length > 0) {
-        // console.log(val);
-        let ele = document.querySelector('label.chips');
-        let tb = ele.querySelector('input');
-        let chip = document.createElement('span');
-        let cross = document.createElement('a');
-        cross.onclick = (e) => {
-          e.target.parentElement.remove();
-        };
-
-        chip.innerHTML = val.trim();
-        cross.innerHTML = 'x';
-        chip.appendChild(cross);
-
-        ele.insertBefore(chip, tb);
-
-        e.value = '';
-      }
-    }
-  </script>
-
-  <script src="./assets/js/sendMessage.js"></script>
-
 </head>
 
 <body>
@@ -195,8 +169,14 @@
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Categories/Industries:</label>
-                <label for="chips-input" class="chips form-control">
-                  <input type="text" id="chips-input" oninput="addChips(this)" />
+                <label for="chips-input-cat-ind" class="chips form-control">
+                  <input type="text" id="chips-input-cat-ind" oninput="addChips(this)" />
+                </label>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Location (city):</label>
+                <label for="chips-input-loc" class="chips form-control">
+                  <input type="text" id="chips-input-loc" oninput="addChips(this)" />
                 </label>
               </div>
             </form>
@@ -206,11 +186,11 @@
                 <strong>Generate Recommendations</strong>
               </a>
               <select class="form-select form-select-lg" aria-label=".form-select-lg example"
-                onchange="cityFilterChange(this)">
+                onchange="cityFilterChange(this)" id="location-filter">
                 <option selected>Location Filter</option>
-                <option value="Jaipur">Jaipur</option>
+                <!-- <option value="Jaipur">Jaipur</option>
                 <option value="Mumbai">Mumbai</option>
-                <option value="Delhi">Delhi</option>
+                <option value="Delhi">Delhi</option> -->
               </select>
             </div>
 
@@ -231,7 +211,7 @@
                         99
                       </div>
                       <div class="custom-card-data">
-                        AI Score
+                        Seed Funding Score
                       </div>
                     </div>
                     <div class="custom-card-metrics">
@@ -239,15 +219,23 @@
                         10%
                       </div>
                       <div class="custom-card-data">
-                        Chances of Selection
+                        Physical Amenities Score
                       </div>
                     </div>
                     <div class="custom-card-metrics">
                       <div class="custom-card-data">
-                        150k for 7%
+                        0
                       </div>
                       <div class="custom-card-data">
-                        Funding
+                        Talent Score
+                      </div>
+                    </div>
+                    <div class="custom-card-metrics">
+                      <div class="custom-card-data">
+                        100
+                      </div>
+                      <div class="custom-card-data">
+                        Further Funding Score
                       </div>
                     </div>
                   </div>
@@ -266,7 +254,7 @@
             <div class="custom-card-wrapper"></div>
 
             
-            <div style="text-align: center; font-size: 1.5rem;">We will be releasing the actual version soon. Stay Tuned.</div>
+            <!-- <div style="text-align: center; font-size: 1.5rem;">We will be releasing the actual version soon. Stay Tuned.</div> -->
           </div>
         </div>
       </div>
@@ -921,8 +909,8 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Debugging Files -->
-  <script src="assets/js/custom-card-template.js"></script>
+  <!-- Custom Files -->
+  <script src="assets/js/handlers.js"></script>
 
   <!-- Adjust algo-vid playbackRate -->
   <script>
