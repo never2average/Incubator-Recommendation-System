@@ -29,7 +29,8 @@ const getRecommendations = () => {
             200: (res) => {
                 const incubators = res.incubators;
                 let incubatorList = [];
-                for (const incubator in incubators) {
+                for (const inc in incubators) {
+                    let incubator = incubators[inc];
                     let thisIncubator = {};
                     thisIncubator['name'] = incubator.name;
                     thisIncubator['sf_score'] = incubator.seed_funding_score;
