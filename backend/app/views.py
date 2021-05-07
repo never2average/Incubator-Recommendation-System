@@ -381,6 +381,6 @@ def generateResults_view(request):
     "talent_score": 61,
     "further_funding": 4
     }]
-    '''
+    '''.strip()
     
     return Response(dummyData)
