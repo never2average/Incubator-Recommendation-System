@@ -8,8 +8,9 @@
 const getRecommendations = () => {
     let _cats = document.querySelectorAll('label[for="chips-input-cat-ind"] > span');
     let cats = Array.prototype.slice.call(_cats).map(ele => {
-        return ele.innerText;
+        return ele.innerText.slice(0, ele.innerText.length - 1);
     });
+    console.log(cats);
     let profile = 'https://angel.co/company/' + document.getElementById('basic-url').textContent;
 
     $.ajax({
@@ -18,7 +19,7 @@ const getRecommendations = () => {
         contentType: 'application/json',
         data: JSON.stringify({
             profile: profile,
-            categories: cats,
+            categories: cats[0],
         }),
         dataType: 'json',
 
@@ -28,18 +29,20 @@ const getRecommendations = () => {
             },
             200: (res) => {
                 const incubators = res.incubators;
+                console.log(res);
                 let incubatorList = [];
+                // console.log(incubatorList);
                 for (const inc in incubators) {
                     let incubator = incubators[inc];
                     let thisIncubator = {};
-                    thisIncubator['name'] = incubator.name;
+                    thisIncubator['name'] = incubator.incubator_name;
                     thisIncubator['sf_score'] = incubator.seed_funding_score;
                     thisIncubator['pa_score'] = incubator.physical_amenities;
                     thisIncubator['t_score'] = incubator.talent_score;
                     thisIncubator['ff_score'] = incubator.further_funding;
-                    thisIncubator['link1'] = incubator.incubator_linkedin;
+                    thisIncubator['link1'] = incubator.application;
                     thisIncubator['link2'] = incubator.application;
-                    thisIncubator['city'] = incubator.location.city.districtName;
+                    thisIncubator['city'] = incubator.city_name;
                     incubatorList.push(thisIncubator);
                     // { 'name': 'name1', 'sf_score': 10, 'pa_score': 20, 't_score': 30, 'ff_score': 40, 'link1': 'link1', 'link2': 'link2', 'city': 'city1' },
                 }
