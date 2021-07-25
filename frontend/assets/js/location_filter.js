@@ -1,16 +1,17 @@
 var validator_locations = [...(new Set([
-    "Delhi",
-    "Mumbai",
-    "Chennai",
+    // "Delhi",
+    // "Mumbai",
+    // "Chennai",
 ]))];
 
 const getLocationValidatedColor = (val = "") => {
-    val = String(val).toLowerCase();
-    for (const i of validator_locations) {
-        if (val.localeCompare(i.toLowerCase()) === 0)
-            return 'valid-chip-data';
-    }
-    return 'invalid-chip-data';
+    // val = String(val).toLowerCase();
+    // for (const i of validator_locations) {
+    //     if (val.localeCompare(i.toLowerCase()) === 0)
+    //         return 'valid-chip-data';
+    // }
+    // return 'invalid-chip-data';
+    return 'generic-chip-data';
 };
 
 function locationSetter() {
@@ -23,4 +24,4 @@ function locationSetter() {
     });
     document.body.append(dl);
 }
-locationSetter();
+// locationSetter();

@@ -1620,6 +1620,9 @@ div.jumbo-heading {
 .chips > span.invalid-chip-data {
   background-color: red;
 }
+.chips > span.generic-chip-data {
+  background-color: #e9ecef;
+}
 .chips > span + span {
   margin-left: 0.3rem;
 }
