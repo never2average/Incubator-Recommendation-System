@@ -10,6 +10,10 @@ const getRecommendations = () => {
     let cats = Array.prototype.slice.call(_cats).map(ele => {
         return ele.innerText.slice(0, ele.innerText.length - 1);
     });
+    let _locs = document.querySelectorAll('label[for="chips-input-loc"] > span.generic-chip-data');
+    let locs = Array.prototype.slice.call(_locs).map(ele => {
+        return ele.innerText.slice(0, ele.innerText.length - 1);
+    });
     let profile = 'https://www.linkedin.com/company/' + document.getElementById('basic-url').value;
     if (profile === 'https://www.linkedin.com/company/') {
         alert('Please enter company profile link.');
@@ -32,6 +36,7 @@ const getRecommendations = () => {
         data: JSON.stringify({
             profile: profile,
             categories: cats[0],
+            locations: locs
         }),
         dataType: 'json',
 
