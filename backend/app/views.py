@@ -12,6 +12,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 def recommendation(location=[], args):
+    print(args)
     pd.set_option('display.max_columns', None)
     engine = create_engine('postgresql://postgres:root@localhost:5432/inqb8r')
     a=pd.read_sql_query('select * from "startupneeds"',con=engine)
