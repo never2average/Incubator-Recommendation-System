@@ -75,6 +75,8 @@ const getRecommendations = () => {
 
 const generateCustomCards = (params) => {
     let modalBody = document.querySelector('div.modal-dialog[role=document] div.modal-body div.custom-card-wrapper');
+    modalBody.innerHTML = '';
+
     let template = document.querySelector('#custom-card-template');
 
     let _cities = new Set();
