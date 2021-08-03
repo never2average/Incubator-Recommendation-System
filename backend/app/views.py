@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 from sqlalchemy import create_engine
 
-def recommendation(location=[], args):
+def recommendation(location, args):
     print(args)
     pd.set_option('display.max_columns', None)
     engine = create_engine('postgresql://postgres:root@localhost:5432/inqb8r')
@@ -112,6 +112,6 @@ def generateResults_view(request):
     print(request.data)
     profile = request.data['profile']
     dataSerialized = {
-        'incubators': recommendation([], request.data['categories'])
+        'incubators': recommendation(request.data['locations'], request.data['categories'])
     }
     return Response(dataSerialized)
